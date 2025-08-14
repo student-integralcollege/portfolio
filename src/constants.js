@@ -147,7 +147,7 @@ export const projects = [
 		description: 'A personal portfolio website showcasing my skills, projects, and experience. Built with React and Tailwind CSS, it features a modern design and responsive layout, making it easy to navigate on any device.',
 		image: port,
 		tags: ['React JS', 'Tailwind CSS'],
-		github: 'https://github.com/codingmastr/cmtk-email-validator',
-		webapp: 'https://www.npmjs.com/package/cmtk-email-validator',
+		github: 'https://github.com/student-integralcollege/portfolio',
+		webapp: 'https://portfolio-work-31.vercel.app/',
 	},
 ];
