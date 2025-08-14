@@ -96,7 +96,7 @@ export const education = [
 		id: 1,
 		img: clgLogo,
 		school: 'Integral University, Lucknow',
-		date: 'Aug 2023 - July 2027',
+		date: 'Aug 2023 - present',
 		grade: '8.5 CGPA',
 		desc: "I am currently pursuing my Bachelor's degree in Computer Science from Integral University, Lucknow. My coursework includes a mix of theoretical foundations and practical applications, preparing me for a career in software development.",
 		degree: 'Bachelor of Technology in Computer Science',

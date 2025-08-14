@@ -9,13 +9,12 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_axbtt7a",  // Replace with your EmailJS Service ID
-        "template_1ziboq3",  // Replace with your EmailJS Template ID
-        form.current,
-        "Rz7W9pVF0HdDryNNL"  // Replace with your EmailJS Public Key
-      )
+    emailjs.sendForm(
+      "service_lgx9jsj",
+      "template_1ziboq3",
+      form.current,
+      "Lb7o2h8N3feRmPjQ6"
+    )
       .then(
         () => {
           setIsSent(true);
