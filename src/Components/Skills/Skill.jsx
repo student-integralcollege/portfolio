@@ -1,33 +1,6 @@
-// src/components/Skills/Skills.jsx
 import React from "react";
 import { SkillsInfo } from "../../constants";
-
-const skillLevels = {
-  "HTML": 95,
-  "CSS": 90,
-  "SASS": 80,
-  "JavaScript": 80,
-  "React JS": 80,
-  "Next JS": 75,
-  "Tailwind CSS": 82,
-  "Node JS": 85,
-  "Express JS": 80,
-  "MySQL": 75,
-  "MongoDB": 80,
-  "PostgreSQL": 70,
-  "C": 80,
-  "C++": 85,
-  "Python": 70,
-  "TypeScript": 70,
-  "Git": 90,
-  "GitHub": 90,
-  "VS Code": 95,
-  "Postman": 80,
-  "Compass": 75,
-  "Vercel": 80,
-  "Netlify": 80,
-  "Figma": 70,
-};
+import Tilt from "react-parallax-tilt";
 
 const Skills = () => (
   <section
@@ -53,28 +26,32 @@ const Skills = () => (
           <h3 className="text-2xl sm:text-3xl font-semibold text-gray-400 mb-4 text-center">
             {category.title}
           </h3>
-          {/* Skill Progress Bars */}
-          <div className="flex flex-col gap-4 w-full">
+          {/* Skill Items */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full">
             {category.skills.map((skill) => (
-              <div key={skill.name} className="flex items-center gap-3">
-                <img
-                  src={skill.logo}
-                  alt={`${skill.name} logo`}
-                  className="w-8 h-8 sm:w-10 sm:h-10"
-                />
-                <div className="w-full">
-                  <div className="flex justify-between items-center mb-1">
-                    <span className="text-xs sm:text-sm text-gray-300 font-semibold">{skill.name}</span>
-                    <span className="text-xs sm:text-sm text-gray-400 font-semibold">{skillLevels[skill.name] || 70}%</span>
-                  </div>
-                  <div className="w-full h-3 sm:h-4 bg-[#24144a] rounded-full">
-                    <div
-                      className="h-full rounded-full bg-gradient-to-r from-purple-600 to-pink-500 transition-all duration-700"
-                      style={{ width: `${skillLevels[skill.name] || 70}%` }}
-                    ></div>
-                  </div>
+              <Tilt
+                key={skill.name}
+                tiltMaxAngleX={15}
+                tiltMaxAngleY={15}
+                perspective={800}
+                scale={1.07}
+                transitionSpeed={700}
+                gyroscope={true}
+                className="w-full"
+              >
+                <div
+                  className="flex flex-col items-center justify-center bg-[#18132a] border-2 border-gray-700 rounded-3xl py-4 px-2 transition-all duration-300 hover:border-[#8245ec] hover:bg-[#24144a] shadow"
+                >
+                  <img
+                    src={skill.logo}
+                    alt={`${skill.name} logo`}
+                    className="w-8 h-8 sm:w-10 sm:h-10 mb-2"
+                  />
+                  <span className="text-xs sm:text-sm text-gray-300 font-semibold">
+                    {skill.name}
+                  </span>
                 </div>
-              </div>
+              </Tilt>
             ))}
           </div>
         </div>

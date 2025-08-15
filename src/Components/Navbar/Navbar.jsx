@@ -94,11 +94,11 @@ const Navbar = () => {
                             </li>
                         ))}
                         <div className="flex space-x-4">
-                            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"
+                            <a href="https://github.com/student-integralcollege" target="_blank" rel="noopener noreferrer"
                                 className="text-gray-300 hover:text-white">
                                 <FaGithub size={24} />
                             </a>
-                            <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"
+                            <a href="https://www.linkedin.com/in/syed-mohd-adeeb-hussain-395670295/" target="_blank" rel="noopener noreferrer"
                                 className="text-gray-300 hover:text-white">
                                 <FaLinkedin size={24} />
                             </a>
