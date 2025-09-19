@@ -126,7 +126,7 @@ export const projects = [
 	},
 	{
 		id: 2,
-		title: 'BG Removal',
+		title: 'Bg removal',
 		description:
 			'A React-based web application that provides background removal services for images. Users can upload their images and get a clean, transparent background in seconds. The app uses advanced AI algorithms to ensure high-quality results.',
 		image: background_removal,
@@ -137,9 +137,10 @@ export const projects = [
 			'Node JS',
 			'Express JS',
 			'MongoDB',
+			'Razorpay'
 		],
 		github: 'https://github.com/student-integralcollege/bg-removal',
-		webapp: '',
+		webapp: 'https://removal-x7ta.vercel.app',
 	},
 	{
 		id: 3,
