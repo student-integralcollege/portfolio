@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import Hero from './components/sections/About'
-import Projects from './Components/Work/Projects'
-import Skills from './Components/Skills/Skill'
-import Contact from './Components/Contact/Contact'
+import Projects from './components/sections/Projects'
+import Skills from './components/sections/Skills'
+import Contact from './components/sections/Contact'
 import Layout from './components/layout/Layout'
 
 export default function App() {
