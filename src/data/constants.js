@@ -1,0 +1,86 @@
+// Moved from root `src/constants.js` to `src/data/constants.js`
+
+import schoolLogo from '../assets/education_logo/school.png';
+import clgLogo from '../assets/education_logo/integral.png';
+
+// Project Section Logo's
+import landing from '../assets/work_logo/landing_page.png';
+import game from '../assets/work_logo/Tic Tac toe.png';
+import background_removal from '../assets/work_logo/removal.png';
+import port from '../assets/work_logo/myport.png';
+
+export const education = [
+	{
+		id: 0,
+		img: schoolLogo,
+		school: "ST. Teresa's Day School, Lucknow",
+		date: 'June 2019 - July 2023',
+		grade: '84.5%',
+		desc: "I have completed my class 12 from ST. Teresa's Day School, Lucknow.",
+		degree: 'High School',
+	},
+	{
+		id: 1,
+		img: clgLogo,
+		school: 'Integral University, Lucknow',
+		date: 'Aug 2023 - present',
+		grade: '8.5 CGPA',
+		desc: "I am currently pursuing my Bachelor's degree in Computer Science from Integral University, Lucknow. My coursework includes a mix of theoretical foundations and practical applications, preparing me for a career in software development.",
+		degree: 'Bachelor of Technology in Computer Science',
+	},
+];
+
+export const projects = [
+	{
+		id: 0,
+		title: 'Tic Tac Toe Game',
+		description:
+			'A fun and interactive Tic Tac Toe game built with HTML, CSS, and JavaScript. Players can enjoy a classic game experience with a modern twist, featuring a sleek design and smooth gameplay.',
+		image: game,
+		tags: ['HTML', 'CSS', 'JavaScript'],
+		github: 'https://github.com/student-integralcollege/Tic-Tac-Toe',
+		webapp: 'https://tikitakafree.netlify.app/',
+	},
+	{
+		id: 1,
+		title: 'Landing Page',
+		description:
+			'A responsive headphone landing page built with React and Tailwind CSS.',
+		image: landing,
+		tags: ['React JS', 'Tailwind CSS'],
+		github: 'https://github.com/student-integralcollege/landing-page',
+		webapp: 'https://headphone12-website.netlify.app',
+	},
+	{
+		id: 2,
+		title: 'Bg removal',
+		description:
+			'A React-based web application that provides background removal services for images. Users can upload their images and get a clean, transparent background in seconds. The app uses advanced AI algorithms to ensure high-quality results.',
+		image: background_removal,
+		tags: [
+			'React JS',
+			'Tailwind CSS',
+			'Clerk.js',
+			'Node JS',
+			'Express JS',
+			'MongoDB',
+			'Razorpay'
+		],
+		github: 'https://github.com/student-integralcollege/bg-removal',
+		webapp: 'https://removal-x7ta.vercel.app',
+	},
+	{
+		id: 3,
+		title: 'Portfolio',
+		description: 'A personal portfolio website showcasing my skills, projects, and experience. Built with React and Tailwind CSS, it features a modern design and responsive layout, making it easy to navigate on any device.',
+		image: port,
+		tags: ['React JS', 'Tailwind CSS'],
+		github: 'https://github.com/student-integralcollege/portfolio',
+		webapp: 'https://portfolio-work-31.vercel.app/',
+	},
+];
+
+export const skills = [
+	'React.js', 'Typescript', 'MongoDB', 'Node.js', 'Express.js', 'Tailwind CSS', 'Next.js', 'JavaScript',
+	'Postman', 'GitHub', 'Docker', 'PostgreSQL', 'REST APIs', 'WebSockets',
+];
