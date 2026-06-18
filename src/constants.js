@@ -150,3 +150,8 @@ export const projects = [
 		webapp: 'https://portfolio-work-31.vercel.app/',
 	},
 ];
+
+export const skills = [
+	'React.js', 'Typescript', 'MongoDB', 'Node.js', 'Express.js', 'Tailwind CSS', 'Next.js', 'JavaScript',
+	'Postman', 'GitHub', 'Docker', 'PostgreSQL', 'REST APIs', 'WebSockets',
+];

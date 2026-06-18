@@ -1,113 +1,32 @@
-import React, { useEffect, useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Sun, Moon } from 'lucide-react'
+import { profile, navLinks } from '../../assets/Data'
 
-const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [activeSection, setActiveSection] = useState("");
-    const [isScrolled, setIsScrolled] = useState(false);
+export default function Navbar({ isDark, toggleTheme }) {
+  return (
+    <header className="sticky top-0 z-40 backdrop-blur bg-paper/80 dark:bg-ink/80 border-b border-black/5 dark:border-white/5">
+      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="#top" className="flex items-center gap-2 font-semibold text-ink dark:text-paper">
+          <span className="w-8 h-8 rounded-full bg-ink dark:bg-paper text-paper dark:text-ink flex items-center justify-center text-sm font-bold">
+            {profile.avatarInitial}
+          </span>
+        </a>
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        }
-
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    const handleMenuItemClick = (section) => {
-        setActiveSection(section);
-        setIsOpen(false);
-    }
-
-    const menuItems = [
-        { id: "about", label: "About" },
-        { id: "skills", label: "Skills" },
-        { id: "work", label: "Projects" },
-        { id: "education", label: "Education" },
-        { id: "contact", label: "Contact" },
-    ];
-
-    return (
-        <nav className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] md:px-[7vw] lg:px-[20vw] ${isScrolled ? "bg-[#050414] bg-opacity-50 backdrop-blur-md shadow-md" : "bg-transparent"
-            }`}>
-            <div className="text-white py-5 flex justify-between items-center">
-                {/* Logo */}
-                <div className="text-lg font-semibold cursor-pointer">
-                    <span className="text-[#8245ec]">&lt;</span>
-                    <span className="text-white">Adeeb</span>
-                    <span className="text-[#8245ec]">/</span>
-                    <span className="text-white">Hussain</span>
-                    <span className="text-[#8245ec]">&gt;</span>
-                </div>
-                {/* Menu Items */}
-                <ul className="hidden md:flex space-x-8 text-gray-300">
-                    {menuItems.map((item) => (
-                        <li key={item.id} className={`cursor-pointer hover:text-[#8245ec] ${activeSection === item.id ? "text-[#8245ec]" : ""}`}>
-                            <a
-                                href={`#${item.id}`}
-                                onClick={() => handleMenuItemClick(item.id)}
-                            >
-                                {item.label}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-
-                <div className="hidden md:flex space-x-4">
-                    <a href="https://github.com/student-integralcollege" target="_blank" rel="noopener noreferrer"
-                        className="text-gray-300 hover:text-[#8245ec]">
-                        <FaGithub size={24} />
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/syed-mohd-adeeb-hussain-395670295/" target="_blank" rel="noopener noreferrer"
-                        className="text-gray-300 hover:text-[#8245ec]">
-                        <FaLinkedin size={24} />
-                    </a>
-                </div>
-
-                <div className="md:hidden">
-                    {
-                        isOpen ? (
-                            <FiX className="text-3xl cursor-pointer text-[#8245ec]" onClick={() => setIsOpen(false)} />
-                        ) : (
-                            <FiMenu className="text-3xl cursor-pointer text-[#8245ec]" onClick={() => setIsOpen(true)} />
-                        )}
-                </div>
-            </div>
-
-            {/* Mobile Menu */}
-            {isOpen && (
-                <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-[#050414] bg-opacity-90 backdrop-filter shadow-md md:hidden">
-                    <ul className="flex flex-col items-center space-y-4 py-4 text-gray-300">
-                        {menuItems.map((item) => (
-                            <li key={item.id} className={`cursor-pointer hover:text-white ${activeSection === item.id ? "text-[#8245ec]" : ""}`}>
-                                <a
-                                    href={`#${item.id}`}
-                                    onClick={() => handleMenuItemClick(item.id)}
-                                >
-                                    {item.label}
-                                </a>
-                            </li>
-                        ))}
-                        <div className="flex space-x-4">
-                            <a href="https://github.com/student-integralcollege" target="_blank" rel="noopener noreferrer"
-                                className="text-gray-300 hover:text-white">
-                                <FaGithub size={24} />
-                            </a>
-                            <a href="https://www.linkedin.com/in/syed-mohd-adeeb-hussain-395670295/" target="_blank" rel="noopener noreferrer"
-                                className="text-gray-300 hover:text-white">
-                                <FaLinkedin size={24} />
-                            </a>
-                        </div>
-                    </ul>
-                </div>
-            )}
+        <nav className="hidden sm:flex items-center gap-6 text-sm text-ink/70 dark:text-paper/70">
+          {navLinks.map((link) => (
+            <a key={link.label} href={link.href} className="hover:text-ink dark:hover:text-paper transition-colors">
+              {link.label}
+            </a>
+          ))}
         </nav>
-    );
-};
 
-export default Navbar;
+        <button
+          onClick={toggleTheme}
+          aria-label="Toggle color theme"
+          className="w-9 h-9 rounded-full flex items-center justify-center text-ink/70 dark:text-paper/70 hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+        >
+          {isDark ? <Sun size={18} /> : <Moon size={18} />}
+        </button>
+      </div>
+    </header>
+  )
+}
