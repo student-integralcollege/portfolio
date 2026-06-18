@@ -1,3 +1,5 @@
+import { projects as projectsData, skills as skillsData, education as educationData } from '../constants.js'
+
 export const profile = {
   name: 'Adeeb Hussain',
   avatarInitial: 'Y',
@@ -42,8 +44,6 @@ export const dockLinks = [
   { label: 'LinkedIn', href: 'https://linkedin.com/in/yourhandle', icon: 'linkedin' },
   { label: 'Twitter', href: 'https://twitter.com/yourhandle', icon: 'twitter' },
 ]
-import { projects as projectsData, skills as skillsData, education as educationData } from '../constants'
-
 export const education = educationData
 export const projects = projectsData
 export const skills = skillsData

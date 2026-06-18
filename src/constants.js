@@ -1,29 +1,4 @@
-// Skills Section Logo's
-import htmlLogo from './assets/tech_logo/html.png';
-import cssLogo from './assets/tech_logo/css.png';
-import sassLogo from './assets/tech_logo/sass.png';
-import javascriptLogo from './assets/tech_logo/javascript.png';
-import reactjsLogo from './assets/tech_logo/reactjs.png';
-import nextjsLogo from './assets/tech_logo/nextjs.png';
-import tailwindcssLogo from './assets/tech_logo/tailwindcss.png';
-import nodejsLogo from './assets/tech_logo/nodejs.png';
-import expressjsLogo from './assets/tech_logo/express.png';
-import mongodbLogo from './assets/tech_logo/mongodb.png';
-import cLogo from './assets/tech_logo/c.png';
-import cppLogo from './assets/tech_logo/cpp.png';
-import pythonLogo from './assets/tech_logo/python.png';
-import typescriptLogo from './assets/tech_logo/typescript.png';
-import gitLogo from './assets/tech_logo/git.png';
-import githubLogo from './assets/tech_logo/github.png';
-import vscodeLogo from './assets/tech_logo/vscode.png';
-import postmanLogo from './assets/tech_logo/postman.png';
-import mcLogo from './assets/tech_logo/mc.png';
-import figmaLogo from './assets/tech_logo/figma.png';
-import netlifyLogo from './assets/tech_logo/netlify.png';
-import vercelLogo from './assets/tech_logo/vercel.png';
-import postgreLogo from './assets/tech_logo/postgre.png';
 
-// Education Section Logo's
 import schoolLogo from './assets/education_logo/school.png';
 import clgLogo from './assets/education_logo/integral.png';
 
@@ -33,52 +8,6 @@ import game from './assets/work_logo/Tic Tac toe.png';
 import background_removal from './assets/work_logo/removal.png';
 import port from './assets/work_logo/myport.png';
 
-export const SkillsInfo = [
-	{
-		title: 'Frontend',
-		skills: [
-			{ name: 'HTML', logo: htmlLogo },
-			{ name: 'CSS', logo: cssLogo },
-			{ name: 'SASS', logo: sassLogo },
-			{ name: 'JavaScript', logo: javascriptLogo },
-			{ name: 'React JS', logo: reactjsLogo },
-			{ name: 'Next JS', logo: nextjsLogo },
-			{ name: 'Tailwind CSS', logo: tailwindcssLogo },
-		],
-	},
-	{
-		title: 'Backend',
-		skills: [
-			{ name: 'Node JS', logo: nodejsLogo },
-			{ name: 'Express JS', logo: expressjsLogo },
-			{ name: 'MongoDB', logo: mongodbLogo },
-			{ name: 'PostgreSQL', logo: postgreLogo },
-		],
-	},
-	{
-		title: 'Languages',
-		skills: [
-			{ name: 'C', logo: cLogo },
-			{ name: 'C++', logo: cppLogo },
-			{ name: 'Python', logo: pythonLogo },
-			{ name: 'JavaScript', logo: javascriptLogo },
-			{ name: 'TypeScript', logo: typescriptLogo },
-		],
-	},
-	{
-		title: 'Tools',
-		skills: [
-			{ name: 'Git', logo: gitLogo },
-			{ name: 'GitHub', logo: githubLogo },
-			{ name: 'VS Code', logo: vscodeLogo },
-			{ name: 'Postman', logo: postmanLogo },
-			{ name: 'Compass', logo: mcLogo },
-			{ name: 'Vercel', logo: vercelLogo },
-			{ name: 'Netlify', logo: netlifyLogo },
-			{ name: 'Figma', logo: figmaLogo },
-		],
-	},
-];
 
 export const education = [
 	{
