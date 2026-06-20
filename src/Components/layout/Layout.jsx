@@ -1,13 +1,12 @@
-import React from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
+import Navbar from '../Navbar/Navbar';
 
-export default function Layout({ children, isDark, toggleTheme }) {
+export default function Layout({ isDark, toggleTheme, children }) {
   return (
-    <div className="min-h-screen bg-paper dark:bg-ink transition-colors">
+    <div className={isDark ? 'dark' : ''}>
       <Navbar isDark={isDark} toggleTheme={toggleTheme} />
-      <main>{children}</main>
-      <Footer />
+      <main className="max-w-7xl mx-auto px-6">
+        {children}
+      </main>
     </div>
-  )
+  );
 }

@@ -26,6 +26,7 @@ const Footer = () => {
             { name: "Education", id: "education" },
           ].map((item, index) => (
             <button
+              type="button"
               key={index}
               onClick={() => handleScroll(item.id)}
               className="hover:text-purple-500 text-sm sm:text-base my-1"

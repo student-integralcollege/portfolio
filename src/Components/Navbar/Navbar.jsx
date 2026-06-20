@@ -1,32 +1,28 @@
-import { Sun, Moon } from 'lucide-react'
-import { profile, navLinks } from '../../assets/Data'
+import { FaSun, FaMoon } from "react-icons/fa";
 
 export default function Navbar({ isDark, toggleTheme }) {
   return (
-    <header className="sticky top-0 z-40 backdrop-blur bg-paper/80 dark:bg-ink/80 border-b border-black/5 dark:border-white/5">
-      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2 font-semibold text-ink dark:text-paper">
-          <span className="w-8 h-8 rounded-full bg-ink dark:bg-paper text-paper dark:text-ink flex items-center justify-center text-sm font-bold">
-            {profile.avatarInitial}
-          </span>
-        </a>
+    <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        <nav className="hidden sm:flex items-center gap-6 text-sm text-ink/70 dark:text-paper/70">
-          {navLinks.map((link) => (
-            <a key={link.label} href={link.href} className="hover:text-ink dark:hover:text-paper transition-colors">
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        <h2 className="font-bold text-xl dark:text-white">
+          AH7
+        </h2>
 
-        <button
-          onClick={toggleTheme}
-          aria-label="Toggle color theme"
-          className="w-9 h-9 rounded-full flex items-center justify-center text-ink/70 dark:text-paper/70 hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
-        >
-          {isDark ? <Sun size={18} /> : <Moon size={18} />}
-        </button>
+        <div className="flex gap-8 items-center">
+          <a href="#projects" className="dark:text-white hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+          <a href="#blog" className="dark:text-white hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
+          <a href="#contact" className="dark:text-white hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-yellow-400 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+            aria-label="Toggle theme"
+          >
+            {isDark ? <FaSun size={20} /> : <FaMoon size={20} />}
+          </button>
+        </div>
+
       </div>
-    </header>
-  )
+    </nav>
+  );
 }

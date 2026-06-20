@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import Hero from './components/sections/About'
-import Projects from './components/sections/Projects'
-import Skills from './components/sections/Skills'
-import Contact from './components/sections/Contact'
-import Layout from './components/layout/Layout'
+import Hero from './Components/About/About'
+import Projects from './Components/Work/Work'
+import Skill from './Components/Skills/Skills'
+import Contact from './Components/Contact/Contact'
+import Layout from './Components/Layout/Layout'
+import Education from './Components/Education/Education'
 
 export default function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -20,8 +21,9 @@ export default function App() {
   return (
     <Layout isDark={isDark} toggleTheme={toggleTheme}>
       <Hero />
+      <Skill />
       <Projects />
-      <Skills />
+      <Education />
       <Contact />
     </Layout>
   )

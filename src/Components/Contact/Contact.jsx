@@ -1,21 +1,98 @@
-import { profile } from '../../assets/Data'
+import { useState } from 'react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // You can add form submission logic here
+    console.log('Form submitted:', formData);
+    setSubmitted(true);
+    setFormData({ name: '', email: '', message: '' });
+    setTimeout(() => setSubmitted(false), 3000);
+  };
+
   return (
-    <section id="contact" className="max-w-5xl mx-auto px-6 py-16 pb-32 text-center">
-      <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-ink dark:text-paper">
-        Let's build something together
+    <section className="py-20">
+      <h2 className="text-4xl font-bold mb-12">
+        Contact Me
       </h2>
-      <p className="mt-3 text-ink/60 dark:text-paper/60 max-w-md mx-auto">
-        Have a project in mind, or just want to say hi? My inbox is open.
-      </p>
-      <a href={profile.contact.href}
-        className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink dark:bg-paper text-paper dark:text-ink px-5 py-3 text-sm font-medium hover:opacity-90 transition-opacity">
-        {profile.contact.label}
-      </a>
-      <p className="mt-12 text-xs text-ink/30 dark:text-paper/30">
-        © {new Date().getFullYear()} {profile.name}. Built with React &amp; Tailwind CSS.
-      </p>
+
+      <form onSubmit={handleSubmit} className="max-w-2xl">
+        <div className="mb-6">
+          <label htmlFor="name" className="block text-lg font-semibold mb-2">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Your name"
+          />
+        </div>
+
+        <div className="mb-6">
+          <label htmlFor="email" className="block text-lg font-semibold mb-2">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="your.email@example.com"
+          />
+        </div>
+
+        <div className="mb-6">
+          <label htmlFor="message" className="block text-lg font-semibold mb-2">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            rows="5"
+            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Your message..."
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors"
+        >
+          Send Message
+        </button>
+
+        {submitted && (
+          <p className="mt-4 text-green-600 dark:text-green-400 font-semibold">
+            ✓ Message sent successfully!
+          </p>
+        )}
+      </form>
     </section>
-  )
+  );
 }
