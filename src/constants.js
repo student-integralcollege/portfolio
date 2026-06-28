@@ -33,7 +33,7 @@ export const education = [
 export const projects = [
 	{
 		id: 0,
-		title: 'Tic Tac Toe Game',
+		title: 'Taskflow',
 		description:
 			'A fun and interactive Tic Tac Toe game built with HTML, CSS, and JavaScript. Players can enjoy a classic game experience with a modern twist, featuring a sleek design and smooth gameplay.',
 		image: game,
@@ -44,8 +44,7 @@ export const projects = [
 	{
 		id: 1,
 		title: 'Landing Page',
-		description:
-			'A responsive headphone landing page built with React and Tailwind CSS.',
+		description:'A responsive headphone landing page built with React and Tailwind CSS.',
 		image: landing,
 		tags: ['React JS', 'Tailwind CSS'],
 		github: 'https://github.com/student-integralcollege/landing-page',

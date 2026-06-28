@@ -26,46 +26,66 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-20">
-      <h2 className="text-4xl font-bold mb-12">
-        Contact Me
-      </h2>
+    <section
+      id="contact"
+      className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+      aria-labelledby="contact-heading"
+    >
+      <div className="mx-auto mb-10 max-w-2xl text-center">
 
-      <form onSubmit={handleSubmit} className="max-w-2xl">
-        <div className="mb-6">
-          <label htmlFor="name" className="block text-lg font-semibold mb-2">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Your name"
-          />
+        <h2
+          id="contact-heading"
+          className="mt-3 text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl md:text-5xl dark:text-white"
+        >
+          Contact Me
+        </h2>
+        <p className="mt-4 text-base leading-7 text-zinc-600 sm:text-lg dark:text-zinc-400">
+          Have a project, opportunity, or idea in mind? Send a message and I will get back to you.
+        </p>
+      </div>
+
+      <form
+        onSubmit={handleSubmit}
+        className="mx-auto rounded-3xl border border-zinc-200 bg-white p-5 shadow-2xl shadow-zinc-950/5 sm:p-8 dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-black/20"
+      >
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label htmlFor="name" className="mb-2 block text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              autoComplete="name"
+              className={fieldClassName}
+              placeholder="Your name"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="email" className="mb-2 block text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              autoComplete="email"
+              className={fieldClassName}
+              placeholder="you@example.com"
+            />
+          </div>
         </div>
 
-        <div className="mb-6">
-          <label htmlFor="email" className="block text-lg font-semibold mb-2">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="your.email@example.com"
-          />
-        </div>
-
-        <div className="mb-6">
-          <label htmlFor="message" className="block text-lg font-semibold mb-2">
+        <div className="mt-5">
+          <label htmlFor="message" className="mb-2 block text-sm font-semibold text-zinc-800 dark:text-zinc-200">
             Message
           </label>
           <textarea
@@ -74,25 +94,33 @@ export default function Contact() {
             value={formData.message}
             onChange={handleChange}
             required
-            rows="5"
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Your message..."
-          ></textarea>
+            rows="6"
+            className={`${fieldClassName} min-h-36 resize-y py-3 leading-7`}
+            placeholder="Tell me a little about what you want to build..."
+          />
         </div>
 
-        <button
-          type="submit"
-          className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors"
-        >
-          Send Message
-        </button>
+        <div className="mt-7 flex flex-col items-center justify-center gap-4">
+          <button
+            type="submit"
+            className="inline-flex min-h-12 w-full max-w-xs items-center justify-center rounded-full bg-zinc-950 px-8 text-sm font-bold text-white shadow-lg shadow-zinc-950/15 transition-all duration-300 hover:-translate-y-0.5  active:scale-[0.98] focus:outline-none disabled:opacity-50 sm:w-auto dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-100 dark:focus-visible:ring-white dark:focus-visible:ring-offset-zinc-900"
+          >
+            Send Message
+          </button>
 
-        {submitted && (
-          <p className="mt-4 text-green-600 dark:text-green-400 font-semibold">
-            ✓ Message sent successfully!
-          </p>
-        )}
+          {submitted && (
+            <p
+              className="rounded-full bg-green-50 px-4 py-2 text-center text-sm font-semibold text-green-700 ring-1 ring-inset ring-green-200 dark:bg-green-950/30 dark:text-green-300 dark:ring-green-900/70"
+              role="status"
+              aria-live="polite"
+            >
+              Message sent successfully.
+            </p>
+          )}
+        </div>
       </form>
     </section>
   );
 }
+
+const fieldClassName ='min-h-12 w-full rounded-2xl border border-zinc-300 bg-white px-4 text-base text-zinc-950 transition-colors placeholder:text-zinc-400 focus:border-zinc-500 focus:outline-none focus:ring-4 focus:ring-zinc-950/10 dark:border-zinc-700 dark:bg-zinc-950 dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-zinc-500 dark:focus:ring-white/10';
