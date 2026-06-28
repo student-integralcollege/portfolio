@@ -1,32 +1,96 @@
-import { Sun, Moon } from 'lucide-react'
-import { profile, navLinks } from '../../assets/Data'
+import {
+  FaGithub,
+  FaLinkedin,
+  FaMoon,
+  FaSun,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { HiHome } from "react-icons/hi";
 
 export default function Navbar({ isDark, toggleTheme }) {
   return (
-    <header className="sticky top-0 z-40 backdrop-blur bg-paper/80 dark:bg-ink/80 border-b border-black/5 dark:border-white/5">
-      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2 font-semibold text-ink dark:text-paper">
-          <span className="w-8 h-8 rounded-full bg-ink dark:bg-paper text-paper dark:text-ink flex items-center justify-center text-sm font-bold">
-            {profile.avatarInitial}
-          </span>
-        </a>
+    <div className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2">
+      <div
+        className="
+          flex items-center gap-2
+          rounded-full
+          border border-zinc-300
+          bg-white/90
+          px-4 py-3
+          shadow-xl shadow-zinc-950/10
+          backdrop-blur-xl
+          transition-all duration-300
+          dark:border-zinc-700
+          dark:bg-black/90
+          dark:shadow-black/30
+        "
+      >
+        <NavItem href="#hero">
+          <HiHome size={24} />
+        </NavItem>
 
-        <nav className="hidden sm:flex items-center gap-6 text-sm text-ink/70 dark:text-paper/70">
-          {navLinks.map((link) => (
-            <a key={link.label} href={link.href} className="hover:text-ink dark:hover:text-paper transition-colors">
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        <Divider />
+
+        <NavItem href="https://github.com/yourusername" external>
+          <FaGithub size={22} />
+        </NavItem>
+
+        <NavItem href="https://linkedin.com/in/yourusername" external>
+          <FaLinkedin size={22} />
+        </NavItem>
+
+        <NavItem href="https://x.com/yourusername" external>
+          <FaXTwitter size={22} />
+        </NavItem>
+
+        <Divider />
 
         <button
           onClick={toggleTheme}
-          aria-label="Toggle color theme"
-          className="w-9 h-9 rounded-full flex items-center justify-center text-ink/70 dark:text-paper/70 hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+          aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+          className="
+            rounded-full
+            p-3
+            text-black
+            transition-all duration-300
+            hover:scale-110
+            hover:bg-zinc-100
+            dark:text-white
+            dark:hover:bg-zinc-800
+          "
         >
-          {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          {isDark ? <FaSun size={20} /> : <FaMoon size={20} />}
         </button>
       </div>
-    </header>
-  )
+    </div>
+  );
+}
+
+function NavItem({ href, children, external }) {
+  return (
+    <a
+      href={href}
+      {...(external
+        ? { target: "_blank", rel: "noopener noreferrer" }
+        : {})}
+      className="
+        rounded-full
+        p-3
+        text-black
+        transition-all duration-300
+        hover:scale-110
+        hover:bg-zinc-100
+        dark:text-white
+        dark:hover:bg-zinc-800
+      "
+    >
+      {children}
+    </a>
+  );
+}
+
+function Divider() {
+  return (
+    <div className="mx-1 h-8 w-px bg-zinc-300 transition-colors duration-300 dark:bg-zinc-700" />
+  );
 }
